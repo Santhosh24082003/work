@@ -1,0 +1,622 @@
+* {
+  padding: 0%;
+  margin: 0%;
+}
+
+.nav.wrapper {
+  font-family: arial;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20%;
+  height: 90px;
+  background-color: khaki;
+}
+
+.nav.title {
+  font-size: 20px;
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav.links {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav.important {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+.nav.important li {
+  list-style: none;
+  padding: 15px;
+}
+.nav.important a {
+  text-decoration: none;
+  color: rgb(250, 81, 81);
+  font-weight: 600;
+  border: 2px solid rgb(250, 81, 81);
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.nav.list {
+  margin: 0;
+  padding: 0;
+}
+
+.nav.list li {
+  list-style: none;
+  padding: 35px 20px;
+  display: inline-block;
+}
+
+.nav.list li a {
+  color: black;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+}
+
+.nav.dropdown {
+  color: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 90px;
+  background-color: #efefef;
+  left: 0;
+  right: 0;
+  padding: 0 20% 30px 20%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 0.2s ease-in-out, color 0.1s;
+}
+
+.nav.list li:hover .nav.dropdown {
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out 0.2s;
+  color: #000;
+  transform: scale(1, 1);
+}
+
+.wfo.navigation-bar.ham.icon {
+  cursor: pointer;
+  position: relative;
+  width: 30px;
+  height: 28px;
+  display: none;
+}
+
+.wfo.navigation-bar.ham.bar {
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  background: black;
+  border-radius: 2px;
+  display: block;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  transform-origin: center;
+}
+
+.wfo.navigation-bar.ham.bar:nth-child(1) {
+  top: 0;
+}
+
+.wfo.navigation-bar.ham.bar:nth-child(2) {
+  top: 10px;
+}
+
+.wfo.navigation-bar.ham.bar:nth-child(3) {
+  top: 20px;
+}
+
+.wfo.navigation-bar.ham.icon.active .wfo.navigation-bar.ham.bar:nth-child(1) {
+  transform: translateY(10px) rotate(-45deg);
+}
+
+.wfo.navigation-bar.ham.icon.active .wfo.navigation-bar.ham.bar:nth-child(2) {
+  opacity: 0;
+}
+
+.wfo.navigation-bar.ham.icon.active .wfo.navigation-bar.ham.bar:nth-child(3) {
+  transform: translateY(-10px) rotate(45deg);
+}
+
+@media screen and (max-width: 1254px) {
+  .nav.wrapper {
+    padding: 0 10%;
+    z-index: 99;
+  }
+  .nav.title {
+    transition: 0.2s ease-in-out 0.1s;
+  }
+  .nav.title.active {
+    transition: 0.2s ease-in-out;
+    opacity: 0;
+  }
+  .nav.important {
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+    position: absolute;
+  }
+  .nav.important.active {
+    transition: 0.2s ease-in-out 0.3s;
+    opacity: 1;
+  }
+  .wfo.navigation-bar.ham.icon {
+    display: block;
+  }
+  .nav.links {
+    position: fixed;
+    right: -100vw;
+    width: 100vw;
+    height: 1000vh;
+    background-color: white;
+    margin-top: 190px;
+    align-items: center;
+    justify-content: left;
+    transition: 0.2s ease-in-out;
+  }
+  .nav.links.active {
+    right: 0;
+  }
+  .nav.list {
+    margin-right: 10%;
+  }
+  .nav.list li {
+    list-style: none;
+    margin: 10px 0;
+    padding: 10px;
+    display: inline;
+    font-weight: bold;
+    font-size: 20px;
+    align-items: center;
+  }
+  .nav.gradient-wrapper {
+    position: absolute;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
+  .nav.gradient {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(0deg, rgb(255, 255, 255) 60%, rgba(255, 174, 0, 0) 100%);
+    transition: 0.3s ease-in-out 0.3s;
+  }
+  .nav.gradient.active {
+    transform: translateY(100vh);
+  }
+}
+.nav.list li a:hover {
+  -webkit-text-decoration: underline rgb(250, 81, 81);
+          text-decoration: underline rgb(250, 81, 81);
+  text-underline-offset: 1em;
+}
+
+.nav.important li a:hover {
+  background-color: rgb(250, 81, 81);
+  color: white;
+  letter-spacing: 2px;
+}
+
+.container {
+  padding: 1% 7%;
+  margin: 0%;
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url(splash-img.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: khaki;
+}
+.container h1 {
+  font-weight: 900;
+  font-size: 70px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container h4 {
+  margin-top: 100px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  color: aqua;
+}
+.container h4 span {
+  color: white;
+}
+.container button {
+  padding: 10px;
+  background-color: rgb(250, 81, 81);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  color: white;
+  border: 1px solid rgb(250, 81, 81);
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.container button i {
+  color: white;
+  padding: 10px;
+  font-size: larger;
+  font-weight: 600;
+}
+.container .head {
+  display: flex;
+  justify-content: left;
+}
+.container .head button:hover {
+  transform: scale(1.2);
+}
+.container .image h2 {
+  text-align: end;
+  color: rgb(250, 81, 81);
+  font-size: 30px;
+}
+.container .image img {
+  transform: scale(1.2);
+}
+.container #con-1 a {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  color: aqua;
+  margin-left: 40%;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  #con-1 {
+    width: 100%;
+  }
+  .image {
+    visibility: hidden;
+  }
+}
+@media (max-width: 1138px) {
+  #scroll {
+    visibility: hidden;
+  }
+  .image {
+    visibility: hidden;
+  }
+}
+.container-1 {
+  padding: 3% 7%;
+  margin: 0%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: khaki;
+}
+.container-1 .head-3 h3 {
+  font-size: medium;
+  font-weight: 600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 17px;
+}
+.container-1 .head-3 button {
+  padding: 10px;
+  background-color: rgb(250, 81, 81);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  color: white;
+  border: 1px solid rgb(250, 81, 81);
+  margin-top: 35px;
+  margin-bottom: 30px;
+}
+.container-1 .head-3 button i {
+  color: white;
+  padding: 10px;
+  font-size: larger;
+  font-weight: 600;
+}
+.container-1 .head-3 button:hover {
+  transform: scale(1.2);
+  color: #000;
+}
+.container-1 .head-3 .arrow-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+.container-1 .head-3 p {
+  text-align: end;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container-1 .head-3 .sizecup {
+  margin-top: 20px;
+}
+.container-1 .head-3 .sizecup a {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid khaki;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: xx-large;
+  color: rgb(250, 81, 81);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container-1 .head-3 .sizecup a:hover {
+  transform: scale(1.1);
+  background-color: rgb(250, 81, 81);
+  color: white;
+}
+.container-1 .head-3 h1 {
+  text-align: center;
+}
+.container-1 .head-3 img {
+  text-align: center;
+}
+.container-1 .head-3 .min-head {
+  display: flex;
+  justify-content: center;
+}
+.container-1 .head-3 .min-head img:hover {
+  transform: scale(1.2);
+}
+.container-1 .head-3 span {
+  text-align: center;
+  margin-top: 10px;
+}
+.container-1 .head-3 span a {
+  padding: 32px;
+  font-size: x-large;
+  font-weight: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container-1 .head-3 span a:hover {
+  transform: scale(1.2);
+  color: rgb(250, 81, 81);
+}
+.container-1 .head-3 #coffe-esel {
+  text-align: left;
+  font-size: x-large;
+  font-weight: 600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 10px;
+}
+.container-1 .head-2 h1 {
+  font-weight: 900;
+  font-size: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container-1 .head-2 .btn {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.container-1 .head-2 .btn #btn-1 {
+  padding: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  background-color: rgb(250, 81, 81);
+  border: 1px solid rgb(250, 81, 81);
+}
+.container-1 .head-2 .btn #btn-1 i {
+  color: white;
+  padding: 5px;
+}
+.container-1 .head-2 .btn #btn-1:hover {
+  transform: scale(1.5);
+  color: #000;
+}
+
+.container-2 {
+  padding: 3% 7%;
+  margin: 0%;
+  background-color: khaki;
+}
+.container-2 .head-4 {
+  font-weight: 900;
+  font-size: 25px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container-2 .head-5 {
+  margin-top: 60px;
+  font-weight: 900;
+  font-size: medium;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container-2 .head-5 button {
+  padding: 10px;
+  background-color: rgb(250, 81, 81);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  color: white;
+  border: 1px solid rgb(250, 81, 81);
+  margin-top: 35px;
+  margin-bottom: 30px;
+}
+.container-2 .head-5 button i {
+  color: white;
+  padding: 10px;
+  font-size: larger;
+  font-weight: 600;
+}
+.container-2 .head-5 button:hover {
+  transform: scale(1.2);
+  color: #000;
+}
+
+.container-2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container-2 .head-6 img {
+  border-radius: 10px;
+}
+
+@media (max-width: 1146px) {
+  .head-6 img {
+    width: 70%;
+  }
+}
+.container-3 {
+  padding: 3% 7%;
+  margin: 0%;
+  background-color: khaki;
+  display: flex;
+  flex-wrap: wrap;
+}
+.container-3 button {
+  padding: 10px;
+  background-color: rgb(250, 81, 81);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  color: white;
+  border: 1px solid rgb(250, 81, 81);
+  margin-top: 35px;
+  margin-bottom: 30px;
+}
+.container-3 button i {
+  color: white;
+  padding: 10px;
+  font-size: larger;
+  font-weight: 600;
+}
+.container-3 button:hover {
+  transform: scale(1.2);
+  color: #000;
+}
+.container-3 .head-7 h2 {
+  padding: 20px;
+  width: 300px;
+  font-size: medium;
+  font-weight: 500;
+  color: white;
+  border: 1px solid #000;
+  background-color: #000;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 5px;
+}
+.container-3 .head-7 h2 i {
+  color: gold;
+}
+.container-3 .head-7 h1 {
+  font-size: xx-large;
+  font-weight: 800;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 70px;
+}
+.container-3 .head-7 p {
+  margin-top: 35px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+}
+.container-3 .head-7 img {
+  margin-top: 15px;
+  border-radius: 25px;
+}
+.container-3 .head-8 h1 {
+  font-weight: 900;
+  font-size: 35px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.minhead {
+  margin-left: 20%;
+}
+
+footer {
+  background-image: url("back-img-2.avif");
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.head-10 img {
+  transform: scale(1.5);
+}
+.head-10 button {
+  padding: 10px;
+  background-color: rgb(250, 81, 81);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  color: white;
+  border: 1px solid rgb(250, 81, 81);
+  margin-top: 35px;
+  margin-bottom: 30px;
+}
+.head-10 button i {
+  color: white;
+  padding: 10px;
+  font-size: larger;
+  font-weight: 600;
+}
+.head-10 button:hover {
+  transform: scale(1.2);
+  color: #000;
+}
+.head-10 h1 {
+  font-size: 35px;
+  font-weight: 700;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+}
+.head-10 p {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(255, 153, 0);
+}
+.head-10 input {
+  padding: 10px;
+  text-align: right;
+}
+
+@media (max-width: 450Px) {
+  .coffeecup-img {
+    width: 60%;
+    height: 60%;
+  }
+  .arrowimg {
+    height: 60%;
+    width: 60%;
+  }
+  .coffeeimg-2 {
+    width: 60%;
+    height: 60%;
+  }
+  .head-3 {
+    transform: scale(0.7);
+  }
+}
+@media (max-width: 518Px) {
+  .head-3 {
+    transform: scale(0.8);
+  }
+  .image {
+    display: none;
+  }
+}
+@media (max-width: 1132px) {
+  .image {
+    display: none;
+  }
+}
+@media (max-width: 393px) {
+  .head-3 {
+    transform: scale(0.7);
+  }
+}
+@media (max-width: 484px) {
+  .head-10 {
+    width: 65%;
+    height: 65%;
+  }
+  .head-9 {
+    width: 65%;
+    height: 65%;
+  }
+}
+@media (max-width: 1088px) {
+  .container-1 {
+    text-align: center;
+  }
+}/*# sourceMappingURL=style.css.map */
